@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="promotion" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Promotion Popup</label>
+            <tab>pointeger</tab>
+            <resource>Pointeger_Core::Core</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Promotion Popup Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="popup_file" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File"
+                       sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Custom File Upload</label>
+                    <backend_model>Pointeger\PromotionPopup\Model\Config\Backend\PromotionFileValidation</backend_model>
+                    <base_url type="media" scope_info="1">promotion/post</base_url>
+                    <upload_dir config="system" scope_info="1">promotion/post</upload_dir>
+                    <comment><![CDATA[Allowed file types: jpg, jpeg, png,pdf]]></comment>
+                    <depends>
+                        <field id="promotion/general/enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

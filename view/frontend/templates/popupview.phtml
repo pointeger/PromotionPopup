@@ -1,0 +1,50 @@
+<?php
+/**
+ * @var $block \Pointeger\PromotionPopup\Block\Popup;
+ */
+
+?>
+<?php
+$showPromotionPopup = $block->getPromotionCookie();
+
+$fileUrl = $block->getFileUrl();
+$fileFormat = pathinfo($fileUrl, PATHINFO_EXTENSION);
+?>
+<?php
+if ($fileUrl): ?>
+    <div id="promotion-popup" style="display: none;">
+        <?=
+        $block->renderCmsBlock('pointeger-popup-cmsblock');
+        ?>
+    </div>
+
+    <script>
+        require(
+            [
+                'jquery',
+                'Magento_Ui/js/modal/modal',
+                'mage/cookies'
+            ],
+            function (
+                $,
+                modal,
+            ) {
+                $(document).ready(function () {
+                    var value = $.mage.cookies.get('show_promotion_popup');
+                    var options = {
+                        type: 'popup',
+                        autoResize: true,
+                        responsive: true,
+                        innerScroll: true,
+                        buttons: []
+                    };
+                    if (value === 'yes') {
+                        var popup = modal(options, $('#promotion-popup'));
+                        $('#promotion-popup').modal('openModal');
+                        $.mage.cookies.set('show_promotion_popup', 'no');
+                    }
+                });
+            });
+    </script>
+<?php
+endif; ?>
