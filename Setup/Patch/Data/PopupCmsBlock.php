@@ -32,9 +32,8 @@ class PopupCmsBlock implements DataPatchInterface
      */
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
-        BlockFactory             $blockFactory
-    )
-    {
+        BlockFactory $blockFactory
+    ) {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->blockFactory = $blockFactory;
     }

@@ -1,26 +1,27 @@
 {
-    "name": "pointeger/magento2-module-promotion-popup",
-    "description": "The Promotion popup extension allows a popup banner which admin can edit from cms block when a customer logs in the website.",
-    "require": {
-        "php": ">=7.3",
-        "magento/framework": ">=103",
-        "pointeger/magento2-module-core" : "*"
-    },
-    "type": "magento2-module",
-    "license": "proprietary",
-    "authors": [
-        {
-            "name": "Pointeger",
-            "email": "tech@pointeger.com"
-        }
-    ],
-    "version": "1.0.0",
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "Pointeger\\PromotionPopup\\": ""
-        }
+  "name": "pointeger/magento2-module-promotion-popup",
+  "description": "The Promotion popup extension allows a popup banner which admin can edit from cms block when a customer logs in the website.",
+  "require": {
+    "php": ">=7.3",
+    "magento/framework": ">=103",
+    "pointeger/magento2-module-core": "*"
+  },
+  "type": "magento2-module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Pointeger",
+      "email": "tech@pointeger.com"
     }
+  ],
+  "version": "1.0.0",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Pointeger\\PromotionPopup\\": ""
+    }
+  }
 }
+

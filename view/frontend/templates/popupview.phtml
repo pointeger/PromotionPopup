@@ -3,15 +3,8 @@
  * @var $block \Pointeger\PromotionPopup\Block\Popup;
  */
 
-?>
-<?php
 $showPromotionPopup = $block->getPromotionCookie();
-
-$fileUrl = $block->getFileUrl();
-$fileFormat = pathinfo($fileUrl, PATHINFO_EXTENSION);
-?>
-<?php
-if ($fileUrl): ?>
+if ($block->CheckPopupConfig()): ?>
     <div id="promotion-popup" style="display: none;">
         <?=
         $block->renderCmsBlock('pointeger-popup-cmsblock');

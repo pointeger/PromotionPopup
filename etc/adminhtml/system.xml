@@ -15,18 +15,6 @@
                     <label>Promotion Popup Enable</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="popup_file" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File"
-                       sortOrder="20" showInDefault="1"
-                       showInWebsite="1" showInStore="1">
-                    <label>Custom File Upload</label>
-                    <backend_model>Pointeger\PromotionPopup\Model\Config\Backend\PromotionFileValidation</backend_model>
-                    <base_url type="media" scope_info="1">promotion/post</base_url>
-                    <upload_dir config="system" scope_info="1">promotion/post</upload_dir>
-                    <comment><![CDATA[Allowed file types: jpg, jpeg, png,pdf]]></comment>
-                    <depends>
-                        <field id="promotion/general/enable">1</field>
-                    </depends>
-                </field>
             </group>
         </section>
     </system>

@@ -5,3 +5,4 @@
         <plugin name="account_loginpost" type="Pointeger\PromotionPopup\Plugin\LoginFlag" sortOrder="10"/>
     </type>
 </config>
+
